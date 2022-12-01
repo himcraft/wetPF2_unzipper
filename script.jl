@@ -9,6 +9,7 @@ for name in result
         continue
     end
     fnm=name[12:15]*"."*name[17:19]
-    cmd=`tar -zxvf $name -C ./$fnm`
+    mkdir("./$fnm")
+    cmd=`tar -zxvf $name --directory ./$fnm`
     run(cmd)
 end
